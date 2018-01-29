@@ -1,0 +1,15 @@
+.catHidden, .dogHidden, .reptileHidden, .submitOut {
+  display: none;
+}
+.petSelectButtons, .panel {
+  display: block;
+  text-align: center;
+}
+.jumbotron {
+  display: block;
+  text-align: center;
+}
+.panel {
+  margin-left: auto;
+  margin-right: auto;
+}
