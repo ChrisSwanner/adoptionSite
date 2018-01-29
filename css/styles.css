@@ -1,4 +1,4 @@
-.catHidden, .dogHidden, .reptileHidden, .submitOut {
+#catHidden, #dogHidden, #reptileHidden, #showPet {
   display: none;
 }
 .petSelectButtons, .panel {
@@ -12,4 +12,13 @@
 .panel {
   margin-left: auto;
   margin-right: auto;
+}
+
+.clicky {
+  color: blue;
+}
+
+.clicky:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

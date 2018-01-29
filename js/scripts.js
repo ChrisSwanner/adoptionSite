@@ -6,34 +6,33 @@ function Pet(name, age, type, weight, sex, dateAvail){
   this.weight = weight;
   this.sex = sex;
   this.dateAvail = dateAvail;
-};
-
-var typeOrganize = function (Pet) {
-  if (this.type === "Dog") {
-    $("ul#DogListIDGoesHere").append("<li><span class=petClickyClassGoesHere>" + this.name + "</span></li>")
-  } else if (this.type === "Cat") {
-    $("ul#CatListIDGoesHere").append("<li><span class=petClickyClassGoesHere>" + this.name + "</span></li>")
-  } else if (this.type === "Reptile") {
-    $("ul#ReptileListIDGoesHere").append("<li><span class=petClickyClassGoesHere>" + this.name + "</span></li>")
-  }
-};
+}
 
 $(document).ready(function() {
-  $("SubmitIDGoesHere").click(function(event) {
+  $("form#addPet").submit(function(event) {
   (event).preventDefault();
 
-  var petName = $("PetNameIDGoesHere").val();
-  var petAge = $("PetAgeIDGoesHere").val();
-  var petType = $("PetTypeIDGoesHere").val();
-  var petWeight = $("PetWeightIDGoesHere").val();
-  var petSex = $("PetSexIDGoesHere").val();
-  var petDateAvail = $("PetDateIDGoesHere").val();
+  var petType = $("input:radio[name=type]:checked").val();
+  var petName = $("input#name").val();
+  var petAge = $("input#age").val();
+  var petWeight = $("input#weight").val();
+  var petSex = $("input#sex").val();
+  var petDateAvail = $("input#dateAvail").val();
 
-  var newPet = new Pet(petName, petAge, petType, petWeight, petSex, petDateAvail)
+  var newPet = new Pet(petName, petAge, petType, petWeight, petSex, petDateAvail);
 
-  typeOrganize(newPet)
+  debugger;
 
-  $(".petClickyClassGoesHere").last().click(function() {
+  if (newPet.type === "Dog") {
+    $("ul#dogHidden").append("<li><span class=clicky>" + newPet.name + "</span></li>");
+  } else if (newPet.type === "Cat") {
+    $("ul#catHidden").append("<li><span class=clicky>" + newPet.name + "</span></li>");
+  } else if (newPet.type === "Reptile") {
+    $("ul#reptileHidden").append("<li><span class=clicky>" + newPet.name + "</span></li>");
+  }
+
+  $(".clicky").last().click(function() {
+    $("#showPet").show()
     $("#nameDisplay").text(newPet.name);
     $("#ageDisplay").text(newPet.age);
     $("#weightDisplay").text(newPet.weight);
@@ -42,7 +41,21 @@ $(document).ready(function() {
     })
   })
 
+  $("#catBtn").click(function() {
+    $("#catHidden").show();
+    $("#dogHidden").hide();
+    $("#reptileHidden").hide();
+  })
 
-})
+  $("#dogBtn").click(function() {
+    $("#dogHidden").show();
+    $("#catHidden").hide();
+    $("#reptileHidden").hide();
+  })
 
+  $("#reptileBtn").click(function() {
+    $("#reptileHidden").show();
+    $("#dogHidden").hide();
+    $("#catHidden").hide();
+  })
 })

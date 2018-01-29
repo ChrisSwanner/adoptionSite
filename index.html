@@ -23,49 +23,45 @@
       </div>
       <hr>
       <div class="panel panel-info">
-        <form class="addPet">
+        <form id="addPet">
           <div class="panel panel-heading">
             <label for="addDog">Put your pet up for adoption</label>
       </div>
       <br>
       <div class="panel panel-body">
-        <label><input type="radio" name="radio" value="addDog">Dog</label>
-        <label><input type="radio" name="radio" value="addCat">Cat</label>
-        <label><input type="radio" name="radio" value="addReptile">Reptile</label><br>
-        <input type="text" name="addPet" value="Name"><br>
-        <input type="text" name="addPet" value="Age"><br>
-        <input type="text" name="addPet" value="Breed"><br>
-        <input type="text" name="addPet" value="Weight"><br>
-        <input type="text" name="addPet" value="Sex"><br>
-        <input type="text" name="addPet" value="Date Available"></input><br>
-        <button type="button">Submit</button>
+        <label><input type="radio" name="type" value="Dog">Dog</label>
+        <label><input type="radio" name="type" value="Cat">Cat</label>
+        <label><input type="radio" name="type" value="Reptile">Reptile</label><br>
+        <input id="name" type="text" name="addPet" placeholder="Enter Name"><br>
+        <input id="age" type="text" name="addPet" placeholder="Enter Age"><br>
+        <input id="weight"  type="text" name="addPet" placeholder="Enter Weight"><br>
+        <input id="sex" type="text" name="addPet" placeholder="Enter Sex"><br>
+        <input id="dateAvail" type="text" name="addPet" placeholder="Enter Date"></input><br>
+        <input type="submit">
       </div>
       </form>
     </div>
     </div>
-      <div class="catHidden">
-        <ul>
+      <div >
+        <ul id="catHidden">
         </ul>
       </div>
-      <div class="dogHidden">
-        <ul>
+      <div>
+        <ul id="dogHidden">
         </ul>
       </div>
-      <div class="reptileHidden">
-        <ul>
+      <div>
+        <ul id="reptileHidden">
         </ul>
       </div>
 
-      <div class="submitOut">
         <div id="showPet">
-          <h2 id="name"></h2>
-            <p>Age: <span id="age"></span></p>
-            <p>Breed: <span id="breed"></span></p>
-            <p>Weight: <span id="weight"></span></p>
-            <p>Sex: <span id="sex"></span></p>
-            <p>Date Available: <span id="dateAvailable"></span></p>
+          <h2 id="nameDisplay"></h2>
+            <p>Age: <span id="ageDisplay"></span></p>
+            <p>Weight: <span id="weightDisplay"></span></p>
+            <p>Sex: <span id="sexDisplay"></span></p>
+            <p>Date Available: <span id="dateAvailDisplay"></span></p>
         </div>
-      </div>
 
     </div>
   </body>
